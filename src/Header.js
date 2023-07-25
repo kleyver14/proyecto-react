@@ -5,7 +5,7 @@ import logo from './assets/logo.webp'
 
 
 const navigation = [
-  { name: 'Inicio', href: '/', current: false },
+  { name: 'Inicio', href: '#/', current: false },
   { name: 'Productos', href: '#/products', current: false },
   { name: 'Usuarios', href: '#/users', current: false },
 ]
