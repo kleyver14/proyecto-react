@@ -114,11 +114,11 @@ export default function FormCreate({ type }) {
                 <label htmlFor="role">Role</label>
                  <select
                 className="block w-full rounded-md border-0 py-1.5 pl-2 pr-7 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                id="role"
-                name="role"
-                onChange={handleChange}
-                required
-                value={formData.role}
+                  id="role"
+                  name="role"
+                  onChange={handleChange}
+                  required
+                  value={formData.role}
                 
                 defaultValue="customer"
                 >

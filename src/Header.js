@@ -1,8 +1,11 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import logo from './assets/logo.webp'
+
 
 const navigation = [
+  { name: 'Inicio', href: '/', current: false },
   { name: 'Productos', href: '#/products', current: false },
   { name: 'Usuarios', href: '#/users', current: false },
 ]
@@ -33,8 +36,8 @@ export default function Header() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
+                    src={logo}
+                    alt="ReliableTech"
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
