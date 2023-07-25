@@ -45,7 +45,7 @@ export default function Table({ type, tableHeader, urlAPI }) {
         {titleCreate}
         </button>
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
           <tr>
             {tableHeader.map((header) => (
               <th scope="col" className="px-6 py-3" key={header}>
@@ -60,13 +60,13 @@ export default function Table({ type, tableHeader, urlAPI }) {
         <tbody>
           {userTableData ? (
             userTableData.map((item) => (
-              <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700" key={item.id}>
+              <tr className="bg-white border-b dark:border-gray-700" key={item.id}>
                 {tableHeader.map((name) => {
                   if (['avatar', 'images'].includes(name)) {
-                    const image = Array.isArray(item?.[name]) ? item?.[name]?.[0] : item?.[name];
+                    const image = Array.isArray(item?.[name]) ? item?.[name]?.[0] : `https://avatars.dicebear.com/api/croodles/${Math.floor((Math.random() * 10000000) + 1)}.svg`;
 
                     return (
-                      <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" key={name}>
+                      <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap " key={name}>
                         <img className="w-10 h-10 rounded-full" alt={item.title} src={image}></img>
                       </th>
                     );
@@ -74,14 +74,14 @@ export default function Table({ type, tableHeader, urlAPI }) {
 
                   if ('updatedAt' === name) {
                     return (
-                      <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" key={name}>
+                      <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap " key={name}>
                         {new Date(item?.[name]).toLocaleString()}
                       </th>
                     );
                   }
 
                   return (
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" key={name}>
+                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap " key={name}>
                       {item?.[name]}
                     </th>
                   );

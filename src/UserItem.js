@@ -29,7 +29,7 @@ export default function UserItem(props) {
           <div className="sm:w-1/2 sm:pr-8">
             <div className="aspect-w-3 aspect-h-2 rounded overflow-hidden sm:rounded-lg">
               <img
-                src={productData.avatar}
+                src={`https://avatars.dicebear.com/api/croodles/${Math.floor((Math.random() * 10000000) + 1)}.svg`}
                 alt={productData.name}
                 className="w-30 h-30 rounded-full overflow-hidden mx-auto"
                 style={{ clipPath: 'circle()' }}

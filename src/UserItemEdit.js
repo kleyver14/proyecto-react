@@ -101,13 +101,15 @@ export default function UserItemEdit(props) {
           <span className='text-gray-500 sm:text-sm'></span>
         </div>
         <input
-          type='email'
+          type='password'
           name='password'
           id='password'
           value={productData.password}
           onChange={handleInputChange}
           className='block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
           placeholder='Contraseña'
+          minLength="4"
+
         />
       </div>
       
@@ -119,15 +121,21 @@ export default function UserItemEdit(props) {
         <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
           <span className='text-gray-500 sm:text-sm'></span>
         </div>
-        <input
-          type='text'
-          name='role'
-          id='role'
-          value={productData.role}
-          onChange={handleInputChange}
-          className='block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-          placeholder='Rol'
-        />
+
+        <select
+                className="block w-full rounded-md border-0 py-1.5 pl-2 pr-7 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                id="role"
+                name="role"
+                onChange={handleInputChange}
+                required
+                value={productData.role}
+                
+                defaultValue="customer"
+                >
+                <option value=""></option>
+                <option value="admin">Admin</option>
+                <option value="customer">Customer</option>
+              </select>
       </div>
 
 

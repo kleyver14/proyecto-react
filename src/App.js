@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
@@ -10,13 +10,13 @@ import UserItem from "./UserItem";
 import UserItemEdit from "./UserItemEdit";
 import FormCreate from "./FormCreate"
 
-
+const basename = '/proyecto-react'; 
 
 function App() {
   return (
     <>
       <Header></Header>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" index element={<Home />} />
           <Route path="/products/create" element=
@@ -76,7 +76,7 @@ function App() {
             }
           />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

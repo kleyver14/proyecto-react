@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function FormCreate({ type }) {
   const initialFormData =
     type === "/users"
-      ? { name: "", email: "", role: "" }
+      ? { name: "", email: "", role: "", password:""}
       : { title: "", price: "", images: [], description: ""};
   const [formData, setFormData] = useState(initialFormData);
   const [productoCreado, setProductoCreado] = useState(null);
@@ -106,20 +106,26 @@ export default function FormCreate({ type }) {
                   name="password"
                   onChange={handleChange}
                   required
+                  minLength="4"
                   value={formData.password}
                 />
               </div>
               <div>
                 <label htmlFor="role">Role</label>
-                <input
-                  className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  type="text"
-                  id="role"
-                  name="role"
-                  onChange={handleChange}
-                  required
-                  value={formData.role}
-                />
+                 <select
+                className="block w-full rounded-md border-0 py-1.5 pl-2 pr-7 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                id="role"
+                name="role"
+                onChange={handleChange}
+                required
+                value={formData.role}
+                
+                defaultValue="customer"
+                >
+                <option value=""></option>
+                <option value="admin">Admin</option>
+                <option value="customer">Customer</option>
+              </select>
               </div>
               <div className="my-5">
                 <button
